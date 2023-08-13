@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(to bottom, #f8f9fa, #d1d3d4); /* Gradient from light to slightly darker color */
+    font-family: Arial, sans-serif; /* Optional: Set a preferred font family */
+    margin: 0;
+    padding: 0;
+}
+
+[x-cloak] { display: none; }
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(to bottom, #f8f9fa, #d1d3d4);
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+    color: #343a40; /* Dark text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Navbar link hover effect */
+.navbar-nav .nav-link:hover {
+    color: #ffffff; 
+    background-color: purple; 
+    text-decoration: solid;
+}
+
+/* Stylish "up" arrow */
+.up-arrow {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #555;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.up-arrow:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.price-calculation button:hover {
+    background-color: gold;
+    color: #000000;
+}
+
+.navbar-brand img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Hover effect for buttons */
+.btn-hover:hover {
+    background-color: orangered;
+    color: white;
+}
+
+/* Messages Styling */
+.message {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #dc3545; /* Red color for error messages */
+}
+
+.success-message {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #28a745; /* Green color for success messages */
+}

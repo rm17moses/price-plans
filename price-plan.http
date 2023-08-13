@@ -1,0 +1,52 @@
+### Bill total calculation
+POST http://localhost:3010/api/phonebill/
+Content-Type: application/json
+
+{
+    "plan_name": "call 201",
+    "actions": "sms,call,sms"
+}
+
+### Get all Price Plans
+GET http://localhost:3010/api/price_plans/
+
+### Create a new Price Plan
+POST http://localhost:3010/api/price_plan/create
+Content-Type: application/json
+
+{
+    "plan_name": "call 2023",
+    "call_price":  0.83,
+    "sms_price": 1.50
+}
+
+### Update a Price Plan
+POST http://localhost:3010/api/price_plan/update
+Content-Type: application/json
+
+{
+    "plan_name": "Business Plan",
+    "call_price":  0.85,
+    "sms_price": 0.65,
+    "id": 9
+}
+
+### Delete a Price Plan
+POST http://localhost:3010/api/price_plan/delete
+Content-Type: application/json
+
+{
+    "plan_name": "call"
+}
+
+### Totals
+
+GET http://localhost:3010/api/price_plan/totals
+
+###
+POST http://localhost:3010/api/price_plan/clear_totals
+# Content-Type: application/json
+
+# {
+
+# }
