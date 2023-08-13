@@ -4,6 +4,3 @@ CREATE TABLE if not EXISTS price_plan (
     sms_price real,
     call_price real
 );
-
--- DROP TABLE price_plan;
-

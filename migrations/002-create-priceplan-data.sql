@@ -15,11 +15,11 @@ VALUES ('Unlimited Plan', 0.10, 0.40);
 INSERT INTO price_plan (plan_name, sms_price, call_price)
 VALUES ('Business Plan', 0.60, 0.80);
 
-update price_plan
-set plan_name = Basic Plan,
-    sms_price = 0.55,
-    call_price = 0.75
-where id = 5
+-- update price_plan
+-- set plan_name = Basic Plan,
+--     sms_price = 0.55,
+--     call_price = 0.75
+-- where id = 5
 
-delete from price_plan
-where id = 6;
+-- delete from price_plan
+-- where id = 6;

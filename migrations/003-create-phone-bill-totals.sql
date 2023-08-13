@@ -5,4 +5,4 @@ CREATE TABLE if NOT EXISTS totals (
     FOREIGN KEY (price_plan_id) REFERENCES price_plan(id)
 );
 
-DROP TABLE totals;
+-- DROP TABLE totals;
