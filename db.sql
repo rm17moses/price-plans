@@ -6,25 +6,16 @@ CREATE TABLE price_plan (
 );
 
 
--- SELECT *
--- FROM price_plan;
--- SELECT count(*)
--- FROM price_plan;
+SELECT *
+FROM price_plan;
+SELECT count(*)
+FROM price_plan;
 
 -- UPDATE price_plan SET total = sms_price + call_price;
 
-<<<<<<< HEAD
--- insert into price_plan (plan_name, sms_price, call_price)
--- values ('sms 101', 2.35, 0.37);
--- insert into price_plan (plan_name, sms_price, call_price)
--- values ('call 101', 1.75, 0.65);
--- insert into price_plan (plan_name, sms_price, call_price)
--- values ('call 201', 1.85, 0.85);
-=======
 insert into price_plan (plan_name, sms_price, call_price)
 values ('sms 101', 2.35, 0.37);
 insert into price_plan (plan_name, sms_price, call_price)
 values ('call 101', 1.75, 0.65);
 insert into price_plan (plan_name, sms_price, call_price)
 values ('call 201', 1.85, 0.85);
->>>>>>> 9196f0670c03aa4bcfcfc73f9edca35740ffc98b
