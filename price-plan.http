@@ -1,5 +1,5 @@
 ### Bill total calculation
-POST http://localhost:3010/api/phonebill/
+POST https://network-price-plans.onrender.com/api/phonebill/
 Content-Type: application/json
 
 {
@@ -8,10 +8,10 @@ Content-Type: application/json
 }
 
 ### Get all Price Plans
-GET http://localhost:3010/api/price_plans/
+GET https://network-price-plans.onrender.com/api/price_plans/
 
 ### Create a new Price Plan
-POST http://localhost:3010/api/price_plan/create
+POST https://network-price-plans.onrender.com/api/price_plan/create
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Update a Price Plan
-POST http://localhost:3010/api/price_plan/update
+POST https://network-price-plans.onrender.com/api/price_plan/update
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### Delete a Price Plan
-POST http://localhost:3010/api/price_plan/delete
+POST https://network-price-plans.onrender.com/api/price_plan/delete
 Content-Type: application/json
 
 {
@@ -41,10 +41,10 @@ Content-Type: application/json
 
 ### Totals
 
-GET http://localhost:3010/api/price_plan/totals
+GET https://network-price-plans.onrender.com/api/price_plan/totals
 
 ###
-POST http://localhost:3010/api/price_plan/clear_totals
+POST https://network-price-plans.onrender.com/api/price_plan/clear_totals
 # Content-Type: application/json
 
 # {

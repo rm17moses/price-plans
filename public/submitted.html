@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Phone Bill Plans with SQLite</title>
+    <title>Price Plan Calculation Submitted</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,7 +31,7 @@
                 <div class="navbar-nav">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
-                          <a href="index.html" aria-current="page" class="nav-link active page-link">Price Plans</a>
+                          <a href="index.html" class="nav-link page-link">Price Plans</a>
                         </li>
                         <li class="nav-item">
                           <a href="calculate.html" class="nav-link page-link">Calculate Price Plan</a>
@@ -46,7 +46,7 @@
                           <a href="delete.html" class="nav-link page-link">Delete Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="submitted.html" class="nav-link page-link">Submitted Price Plan Totals</a>
+                          <a href="submitted.html" aria-current="page" class="nav-link active page-link">Submitted Price Plan Totals</a>
                         </li>
                       </ul>
                 </div>
@@ -54,35 +54,43 @@
         </div>
     </nav>
 
-    <!-- UP ARROW -->
+    <!-- Totals History -->
+    <section id="submitted-plans" class="py-2">
+        <h1>Submitted Price Plan Totals</h1>
+        <button class="btn btn-primary fw-bold btn-hover mb-3" x-on:click="open =! open">Show Totals Table</button>
+        <div x-show="open">
+            <div x-show="totalHistory.length === 0">
+                <p class="lead">There are no Price Plans Submitted, to submit a price plan go to <a
+                        href="calcuate.html"><b>Price Plan Calculation</b></a> section.</p>
+            </div>
+            <div x-show="totalHistory.length > 0">
+                <table class="table table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Total Spent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="total in totalHistory">
+                            <tr>
+                                <td x-text="total.plan_name"></td>
+                                <td x-text="total.total_spent"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-    <a href="#home" class="up-arrow">
-        <i class="bi bi-arrow-up-circle-fill"></i>
-    </a>
-
-    <!-- List of All Price Plans -->
-    <section id="list_plans" class="py-2">
-        <h1>MM Networks Price Plans</h1>
-        <table class="table table-hover table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Price Plan ID</th>
-                    <th>Price Plan</th>
-                    <th>SMS Prices</th>
-                    <th>Call Prices</th>
-                </tr>
-            </thead>
-            <tbody>
-                <template x-for="plan in pricePlans">
-                    <tr>
-                        <td x-text="plan.id"></td>
-                        <td x-text="plan.plan_name"></td>
-                        <td x-text="'R' + plan.sms_price"></td>
-                        <td x-text="'R' + plan.call_price"></td>
-                    </tr>
-                </template>
-            </tbody>
-        </table>
+    <!-- Clear Totals Table -->
+    <section id="clear-submitted-plans" class="py-2">
+        <div class="text-center">
+            <h6 class="mb-3">To clear the price plan calculation history, click the button below</h6>
+            <span class="success-messag fw-bold" x-text="clearMessage"></span>
+            <button class="btn btn-danger fw-bold btn-hover" x-on:click="deleteTotals()">Clear History</button>
+        </div>
     </section>
 
 <footer class="text-center pt-4 fixed-bottom">
@@ -105,5 +113,7 @@
         </div>
     </div>
 </footer>
+
 </body>
+
 </html>
