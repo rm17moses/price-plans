@@ -3,7 +3,7 @@ POST https://network-price-plans.onrender.com/api/phonebill/
 Content-Type: application/json
 
 {
-    "plan_name": "call 201",
+    "plan_name": "Business Plan",
     "actions": "sms,call,sms"
 }
 

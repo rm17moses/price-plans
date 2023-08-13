@@ -57,7 +57,12 @@
     <!-- Totals History -->
     <section id="submitted-plans" class="py-2">
         <h1>Submitted Price Plan Totals</h1>
-        <button class="btn btn-primary fw-bold btn-hover mb-3" x-on:click="open =! open">Show Totals Table</button>
+        <div x-show="!open">
+            <button class="btn btn-primary fw-bold btn-hover mb-3" x-on:click="open =! open">Show Totals Table</button>
+        </div>
+        <div x-show="open">
+            <button class="btn btn-primary fw-bold btn-hover mb-3" x-on:click="open =! open">Hide Totals Table</button>
+        </div>
         <div x-show="open">
             <div x-show="totalHistory.length === 0">
                 <p class="lead">There are no Price Plans Submitted, to submit a price plan go to <a
@@ -93,7 +98,7 @@
         </div>
     </section>
 
-<footer class="text-center pt-4 fixed-bottom">
+<footer class="text-center pt-4 mt-5 fixed-bottom">
     <div class="container bg-dark card bg-gradient text-white p-3">
         <p>&copy; 2023 | All rights reserved | Moses Mobile Networks </p>
         <div class="container">
