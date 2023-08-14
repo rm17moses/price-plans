@@ -16,7 +16,7 @@ export async function getPricePlans() {
 }
 
 const list = await getPricePlans();
-console.log(list);
+// console.log(list);
 
 // Create a new price plan
 export async function addPricePlan(plan_name, sms_price, call_price, id) {

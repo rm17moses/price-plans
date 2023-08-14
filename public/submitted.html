@@ -31,23 +31,26 @@
                 <div class="navbar-nav">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
-                          <a href="index.html" class="nav-link page-link">Price Plans</a>
+                          <a href="index.html" class="nav-link text-white page-link">Price Plans</a>
                         </li>
                         <li class="nav-item">
-                          <a href="calculate.html" class="nav-link page-link">Calculate Price Plan</a>
+                          <a href="calculate.html" class="nav-link text-white page-link">Calculate Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="create.html" class="nav-link page-link">Create Custom Plan</a>
+                          <a href="create.html" class="nav-link text-white page-link">Create Custom Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="update.html" class="nav-link page-link">Update Price Plan</a>
+                          <a href="update.html" class="nav-link text-white page-link">Update Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="delete.html" class="nav-link page-link">Delete Price Plan</a>
+                          <a href="delete.html" class="nav-link text-white page-link">Delete Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="submitted.html" aria-current="page" class="nav-link active page-link">Submitted Price Plan Totals</a>
+                          <a href="submitted.html" aria-current="page" class="nav-link text-white active page-link">Submitted Price Plan Totals</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link text-white page-link">About Us</a>
+                          </li>
                       </ul>
                 </div>
             </div>
@@ -93,11 +96,11 @@
     <section id="clear-submitted-plans" class="py-2">
         <div class="text-center">
             <h6 class="mb-3">To clear the price plan calculation history, click the button below</h6>
-            <span class="success-messag fw-bold" x-text="clearMessage"></span>
+            <p class="success-message bg-light rounded fw-bold" x-text="clearMessage"></p>
             <button class="btn btn-danger fw-bold btn-hover" x-on:click="deleteTotals()">Clear History</button>
         </div>
     </section>
-
+<!-- 
 <footer class="text-center pt-4 mt-5 fixed-bottom">
     <div class="container bg-dark card bg-gradient text-white p-3">
         <p>&copy; 2023 | All rights reserved | Moses Mobile Networks </p>
@@ -118,7 +121,7 @@
         </div>
     </div>
 </footer>
-
+ -->
 </body>
 
 </html>
