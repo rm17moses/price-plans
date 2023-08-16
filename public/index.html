@@ -20,7 +20,7 @@
 <body x-data="pricePlanWithAPIWidget" class="container" x-cloak>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="home">
+    <nav class="navbar navbar-expand-lg navbar-light" id="home">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="images/Moses_Networks.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -57,11 +57,22 @@
         </div>
     </nav>
 
+    <template x-if="!show"> 
+<div class="text-center my-5 py-5 bg-light">
+<h1>Welcome to</h1>
+<img src="images/Moses_Networks.png" alt="">
+</div>
+</template>
 
-
+<div class="text-center" x-show="!show">
+    <button x-on:click="show = !show" class="btn btn-warning fw-bold">Show Price Plans</button>
+</div>
     <!-- List of All Price Plans -->
-    <section id="list_plans" class="py-2">
-        <h1>MMN Price Plans</h1>
+    <div x-show="show">
+    <section id="list_plans" class="bg-info-subtle p-2 my-2">
+        <div class="text-center">
+        <img src="images/Moses_Networks.png" alt="" style=" height: 40px;"> <h3 class="fw-bold"> Price Plans</h3> 
+        </div>
         <table class="table table-hover table-bordered">
             <thead class="table-dark">
                 <tr>
@@ -83,7 +94,11 @@
             </tbody>
         </table>
     </section>
+</div>
 
+<div class="text-center" x-show="show">
+    <button x-on:click="show = !show" class="btn btn-warning fw-bold">Hide Price Plans</button>
+</div>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 body {
-    background-color: #C0C0C0; 
+    background-color: #e5e5e5; 
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 
 /* Navbar styling */
 .navbar {
-    background-image: linear-gradient(to bottom, #008000, #008000);
+    background-image: linear-gradient(to bottom, #f48c06, #f48c06);
     color: white;
   }
   
@@ -24,7 +24,7 @@ body {
 /* Navbar link hover effect */
 .navbar-nav .nav-link:hover {
     color: #ffffff; 
-    background-color: orangered; 
+    background-color: #03071e; 
     text-decoration: solid;
     padding: 0 0.5rem 0 0.5rem;
     border-radius: 0.5rem;

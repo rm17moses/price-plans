@@ -26,6 +26,7 @@ document.addEventListener('alpine:init', () => {
       totalHistory: [],
       clearMessage: '',
       open: false,
+      show: false,
 
       refresh(){
         window.location.reload();
