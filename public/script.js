@@ -121,13 +121,17 @@ document.addEventListener('alpine:init', () => {
                 }).then(result => {
                   this.clearMessage = result.data.message;
                 })
-                window.location.reload();
+                setTimeout(() => {
+                  this.clearMessage = '';
+                  window.location.reload();
+                }, 2000)
         },
 
         totals(){
           axios
               .get('/api/price_plan/totals')
               .then(result => {
+                console.log(result.data)
                 this.totalHistory = result.data.totals;
               })
         },

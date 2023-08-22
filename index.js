@@ -27,6 +27,25 @@ app.post('/api/phonebill/', async (req, res) => {
     }
 });
 
+
+// app.get('/api/phonebill/', (req, res) => {
+//     const actionStores = req.app.locals.actionStores;
+//     if (!actionStores) {
+//         res.status(404).json({
+//             status: 'unsuccessful',
+//             message: 'Action store not found'
+//         });
+//     } else {
+//         res.json({
+//             status: 'success',
+//             actionStores
+//         });
+//     }
+// });
+
+
+
+
 // SHOW PRICE PLANS API
 
 app.get('/api/price_plans/', async (req, res) => {

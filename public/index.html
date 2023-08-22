@@ -31,74 +31,77 @@
                 <div class="navbar-nav">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
-                          <a href="index.html" aria-current="page" class="nav-link text-white active page-link">Price Plans</a>
+                            <a href="index.html" aria-current="page"
+                                class="nav-link text-white active page-link">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a href="calculate.html" class="nav-link text-white page-link">Calculate Price Plan</a>
+                            <a href="calculate.html" class="nav-link text-white page-link">Calculate Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="create.html" class="nav-link text-white page-link">Create Custom Plan</a>
+                            <a href="create.html" class="nav-link text-white page-link">Create Custom Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="update.html" class="nav-link text-white page-link">Update Price Plan</a>
+                            <a href="update.html" class="nav-link text-white page-link">Update Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="delete.html" class="nav-link text-white page-link">Delete Price Plan</a>
+                            <a href="delete.html" class="nav-link text-white page-link">Delete Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="submitted.html" class="nav-link text-white page-link">Submitted Price Plan Totals</a>
+                            <a href="submitted.html" class="nav-link text-white page-link">Price Plan History</a>
                         </li>
                         <li class="nav-item">
                             <a href="about.html" class="nav-link text-white page-link">About Us</a>
-                          </li>
-                      </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <template x-if="!show"> 
-<div class="text-center my-5 py-5 bg-light">
-<h1>Welcome to</h1>
-<img src="images/Moses_Networks.png" alt="">
-</div>
-</template>
-
-<div class="text-center" x-show="!show">
-    <button x-on:click="show = !show" class="btn btn-warning fw-bold">Show Price Plans</button>
-</div>
-    <!-- List of All Price Plans -->
-    <div x-show="show">
-    <section id="list_plans" class="bg-info-subtle p-2 my-2">
-        <div class="text-center">
-        <img src="images/Moses_Networks.png" alt="" style=" height: 40px;"> <h3 class="fw-bold"> Price Plans</h3> 
+    <template x-if="!show">
+        <div class="text-center my-5 py-5 bg-light">
+            <h1 class="text-black">Welcome to</h1>
+            <img src="images/Moses_Networks.png" alt="" style=" max-width: 50%; height: auto; ">
         </div>
-        <table class="table table-hover table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Price Plan ID</th>
-                    <th>Price Plan</th>
-                    <th>SMS Prices</th>
-                    <th>Call Prices</th>
-                </tr>
-            </thead>
-            <tbody>
-                <template x-for="plan in pricePlans">
-                    <tr>
-                        <td x-text="plan.id"></td>
-                        <td x-text="plan.plan_name"></td>
-                        <td x-text="'R' + plan.sms_price"></td>
-                        <td x-text="'R' + plan.call_price"></td>
-                    </tr>
-                </template>
-            </tbody>
-        </table>
-    </section>
-</div>
+    </template>
 
-<div class="text-center" x-show="show">
-    <button x-on:click="show = !show" class="btn btn-warning fw-bold">Hide Price Plans</button>
-</div>
+    <div class="text-center" x-show="!show" >
+        <button x-on:click="show = !show" class="btn btn-warning fw-bold">Show Price Plans</button>
+    </div>
+    <!-- List of All Price Plans -->
+    <div x-show="show" >
+        <section id="list_plans" class="bg-info-subtle p-2 my-2">
+            <div class="text-center">
+                <img src="images/Moses_Networks.png" alt="" style=" height: 40px; ">
+                <h3 class="fw-bold" style="color: black;"> Price Plans</h3>
+            </div>
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Price Plan ID</th>
+                        <th>Price Plan</th>
+                        <th>SMS Prices</th>
+                        <th>Call Prices</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="plan in pricePlans">
+                        <tr>
+                            <td x-text="plan.id"></td>
+                            <td x-text="plan.plan_name"></td>
+                            <td x-text="'R' + plan.sms_price"></td>
+                            <td x-text="'R' + plan.call_price"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="text-center" x-show="show" >
+        <button x-on:click="show = !show" class="btn btn-warning fw-bold">Hide Price Plans</button>
+    </div>
 
 </body>
+
 </html>

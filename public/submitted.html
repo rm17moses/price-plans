@@ -31,7 +31,7 @@
                 <div class="navbar-nav">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
-                          <a href="index.html" class="nav-link text-white page-link">Price Plans</a>
+                          <a href="index.html" class="nav-link text-white page-link">Home</a>
                         </li>
                         <li class="nav-item">
                           <a href="calculate.html" class="nav-link text-white page-link">Calculate Price Plan</a>
@@ -46,7 +46,7 @@
                           <a href="delete.html" class="nav-link text-white page-link">Delete Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="submitted.html" aria-current="page" class="nav-link text-white active page-link">Submitted Price Plan Totals</a>
+                          <a href="submitted.html" aria-current="page" class="nav-link text-white active page-link">Price Plan History</a>
                         </li>
                         <li class="nav-item">
                             <a href="about.html" class="nav-link text-white page-link">About Us</a>
@@ -59,7 +59,7 @@
 
     <!-- Totals History -->
     <section id="submitted-plans" class="py-2">
-        <h1>Submitted Price Plan Totals</h1>
+        <h1>Price Plan Usage History</h1>
         <div x-show="!open">
             <button class="btn btn-primary fw-bold btn-hover mb-3" x-on:click="open =! open">Show Totals Table</button>
         </div>
@@ -69,13 +69,14 @@
         <div x-show="open">
             <div x-show="totalHistory.length === 0">
                 <p class="lead">There are no Price Plans Submitted, to submit a price plan go to <a
-                        href="calcuate.html"><b>Price Plan Calculation</b></a> section.</p>
+                        href="calculate.html"><b>Price Plan Calculation</b></a> section.</p>
             </div>
             <div x-show="totalHistory.length > 0">
                 <table class="table table-hover table-bordered">
                     <thead class="table-dark">
                         <tr>
                             <th>Plan Name</th>
+                            <th>User Input</th>
                             <th>Total Spent</th>
                         </tr>
                     </thead>
@@ -83,6 +84,7 @@
                         <template x-for="total in totalHistory">
                             <tr>
                                 <td x-text="total.plan_name"></td>
+                                <td x-text="total.actions"></td>
                                 <td x-text="total.total_spent"></td>
                             </tr>
                         </template>
@@ -96,32 +98,13 @@
     <section id="clear-submitted-plans" class="py-2">
         <div class="text-center">
             <h6 class="mb-3">To clear the price plan calculation history, click the button below</h6>
-            <p class="success-message bg-light rounded fw-bold" x-text="clearMessage"></p>
             <button class="btn btn-danger fw-bold btn-hover" x-on:click="deleteTotals()">Clear History</button>
+            <br>
+            <p class="success-message bg-light rounded fw-bold" x-text="clearMessage" x-transition></p>
         </div>
+
     </section>
-<!-- 
-<footer class="text-center pt-4 mt-5 fixed-bottom">
-    <div class="container bg-dark card bg-gradient text-white p-3">
-        <p>&copy; 2023 | All rights reserved | Moses Mobile Networks </p>
-        <div class="container">
-            <p>
-                <i class="bi bi-geo-alt-fill text-white icons icon-link-hover"></i> 58 3rd Avenue, Westdene, Gauteng
-            </p>
-            <p class="icons">
-                <a href="https://wa.me/27734907149" target="_blank" class="text-white "><i
-                        class="bi bi-whatsapp hover "></i></a> &nbsp;&nbsp;
-                <a href="https://t.me/MosesMoletsane" target="_blank" class="text-white icon-link-hover"><i
-                        class="bi bi-telegram"></i></a> &nbsp;&nbsp;
-                <a href="mailto:mosesmoletsane17@gmail.com" class="text-white icon-link-hover"><i
-                        class="bi bi-envelope-fill"></i></a> &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/in/moses-moletsane-5b6aa3161/" target="_blank"
-                    class="text-white"><i class="bi bi-linkedin"></i></a>
-            </p>
-        </div>
-    </div>
-</footer>
- -->
+
 </body>
 
 </html>

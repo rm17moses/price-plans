@@ -1,11 +1,14 @@
 ### Bill total calculation
-POST https://network-price-plans.onrender.com/api/phonebill/
+POST http://localhost:3010/api/phonebill/
 Content-Type: application/json
 
 {
-    "plan_name": "Business Plan",
+    "plan_name": "Value Plan",
     "actions": "sms,call,sms"
 }
+
+###
+# GET http://localhost:3010/api/phonebill/
 
 ### Get all Price Plans
 GET https://network-price-plans.onrender.com/api/price_plans/

@@ -1,8 +1,40 @@
 body {
-    background-color: #e5e5e5; 
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(images/price_plan_background.jpeg);
+    filter: brightness(30%); /* make the image 50% darker */
+  }
+
+p {
+    color: white;
+}
+
+label, h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: gold;
+    font-weight: bold;
+}
+
+a:hover {
+    color: black;
+    background-color: gold;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
 }
 
 
@@ -24,7 +56,7 @@ body {
 /* Navbar link hover effect */
 .navbar-nav .nav-link:hover {
     color: #ffffff; 
-    background-color: #03071e; 
+    background-color: green; 
     text-decoration: solid;
     padding: 0 0.5rem 0 0.5rem;
     border-radius: 0.5rem;
@@ -32,7 +64,7 @@ body {
 }
 
 /* Stylish "up" arrow */
-.up-arrow {
+/* .up-arrow {
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -48,7 +80,7 @@ body {
 .up-arrow:hover {
     background-color: #333;
     transform: scale(1.1);
-}
+} */
 
 .price-calculation button:hover {
     background-color: gold;
@@ -73,6 +105,10 @@ body {
     margin-top: 10px;
     font-size: 14px;
     color: #dc3545; /* Red color for error messages */
+    background-color: #ffffff;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 0.3rem;
 }
 
 .success-message {
@@ -80,4 +116,8 @@ body {
     margin-top: 10px;
     font-size: 14px;
     color: #28a745; /* Green color for success messages */
+    background-color: #ffffff;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 0.3rem;
 }

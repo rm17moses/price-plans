@@ -72,8 +72,8 @@ export async function totalPhoneBill(plan_name, actions) {
 
     // Total Record
 
-    const totalsSQL = `INSERT INTO totals (price_plan_id, total_amount) VALUES (?, ?)`;
-    await db.run(totalsSQL, [row.id, total]);
+    const totalsSQL = `INSERT INTO totals (price_plan_id, actions, total_amount) VALUES (?, ?, ?)`;
+    await db.run(totalsSQL, [row.id, actions, total]);
 
     return 'R' + total.toFixed(2);
 
@@ -82,10 +82,10 @@ export async function totalPhoneBill(plan_name, actions) {
 // STORED TOTALS
 
 export async function billTotals(){
-    const sql = `SELECT p.plan_name, 'R' || SUM(t.total_amount) AS total_spent
-                FROM totals AS t
-                JOIN price_plan AS p ON t.price_plan_id = p.id
-                GROUP BY p.plan_name`;
+    const sql = `SELECT price_plan.plan_name, totals.actions, 'R' || SUM(totals.total_amount) AS total_spent
+                FROM totals
+                JOIN price_plan ON totals.price_plan_id = price_plan.id
+                GROUP BY price_plan.plan_name`;
 
     const getTotals = await db.all(sql);
                 if (!getTotals) {

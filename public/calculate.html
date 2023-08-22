@@ -29,7 +29,7 @@
                 <div class="navbar-nav">
                     <ul class="nav nav-underline">
                         <li class="nav-item">
-                          <a href="index.html" class="nav-link text-white page-link">Price Plans</a>
+                          <a href="index.html" class="nav-link text-white page-link">Home</a>
                         </li>
                         <li class="nav-item">
                           <a href="calculate.html" aria-current="page" class="nav-link text-white active page-link">Calculate Price Plan</a>
@@ -44,7 +44,7 @@
                           <a href="delete.html" class="nav-link text-white page-link">Delete Price Plan</a>
                         </li>
                         <li class="nav-item">
-                          <a href="submitted.html" class="nav-link text-white page-link">Submitted Price Plan Totals</a>
+                          <a href="submitted.html" class="nav-link text-white page-link">Price Plan History</a>
                         </li>
                         <li class="nav-item">
                             <a href="about.html" class="nav-link text-white page-link">About Us</a>
@@ -59,9 +59,7 @@
 
     <section id="calculate_plan" class="py-2">
         <h1>Price Plan Calculation</h1>
-        <p><b>Important:</b> the input for call and sms should <b><em>ONLY</em></b> be separated by a
-            comma, with no spaces in-between.</p>
-        <p><b>Call and sms</b> should always be in lowercase.</p>
+        <p><b style="color: yellow;">Important: </b> Call and sms should always be in lowercase.</p>
 
         <div>
             <label for="plan-input">Price Plan:</label>
@@ -73,37 +71,14 @@
                 placeholder="calls and/or sms" x-model="inputAction"></textarea>
             <br>
             <button class="btn btn-success btn-hover fw-bold"
-                x-on:click="totalPhoneBill(planName, inputAction)">Calculate</button>
-            <span class="success-message fw-bold" x-text="message"></span>
-            <span class="message fw-bold" x-text="errorMessage"></span>
+                x-on:click="totalPhoneBill(planName, inputAction)" >Calculate</button>
+            <span class="success-message fw-bold" x-text="message" x-transition></span>
+            <span class="message fw-bold" x-text="errorMessage" x-transition></span>
         </div>
+        <br>
+        <br>
         <p>See changes price plan submission history <a href="submitted.html"><b>here</b></a>.</p>
     </section>
-
-
-<!-- 
-<footer class="text-center pt-4 mt-5 fixed-bottom">
-    <div class="container bg-dark card bg-gradient text-white p-3">
-        <p>&copy; 2023 | All rights reserved | Moses Mobile Networks </p>
-        <div class="container">
-            <p>
-                <i class="bi bi-geo-alt-fill text-white icons icon-link-hover"></i> 58 3rd Avenue, Westdene, Gauteng
-            </p>
-            <p class="icons">
-                <a href="https://wa.me/27734907149" target="_blank" class="text-white "><i
-                        class="bi bi-whatsapp hover "></i></a> &nbsp;&nbsp;
-                <a href="https://t.me/MosesMoletsane" target="_blank" class="text-white icon-link-hover"><i
-                        class="bi bi-telegram"></i></a> &nbsp;&nbsp;
-                <a href="mailto:mosesmoletsane17@gmail.com" class="text-white icon-link-hover"><i
-                        class="bi bi-envelope-fill"></i></a> &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/in/moses-moletsane-5b6aa3161/" target="_blank"
-                    class="text-white"><i class="bi bi-linkedin"></i></a>
-            </p>
-        </div>
-    </div>
-</footer>
- -->
-
 
 </body>
 </html>
