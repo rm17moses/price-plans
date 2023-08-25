@@ -60,9 +60,22 @@
         <section id="delete_plan" class="py-2">
             <h1>Delete a Price Plan</h1>
             <div class="delete-plan-form">
-                <label for="delete-plan-input">Price Plan:</label>
-                <input type="text" name="delete-plan-input" class="form-control" id="delete-plan-input"
-                    placeholder="Type price plan" x-model="deletePlan">
+<p class="fw-bold">To delete a price plan: </p>
+<ol class="text-white">
+    <li>Click the drowndown below</li>
+    <li>Select the Price Plan you want to delete</li>
+    <li>Click the delete Button</li>
+</ol> 
+
+<select class="form-select form-select-sm" id="delete-plan-input" x-model="deletePlan"
+                       aria-label=".form-select-sm example">
+                        <option selected>-- Select Price Plan --</option>
+                        <template x-for="price in pricePlans">
+                            <option x-text="price.plan_name"></option>
+                        </template>
+                    </select>
+
+
                 <br>
                 <button class="btn btn-danger fw-bold btn-hover" x-on:click="deletePricePlan(deletePlan)">Delete
                     Plan</button>

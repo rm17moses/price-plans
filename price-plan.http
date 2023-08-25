@@ -3,7 +3,7 @@ POST http://localhost:3010/api/phonebill/
 Content-Type: application/json
 
 {
-    "plan_name": "Value Plan",
+    "plan_name": "Business Plan",
     "actions": "sms,call,sms"
 }
 
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 ### Totals
 
-GET https://network-price-plans.onrender.com/api/price_plan/totals
+GET http://localhost:3010/api/price_plan/totals
 
 ###
 POST https://network-price-plans.onrender.com/api/price_plan/clear_totals
